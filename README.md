@@ -35,4 +35,4 @@ ___
 > 
 >+ abh.access - даёт иммунитет к анти-бхопу
 
-![example of how the plugin works](https://spigotmc.ru/attachments/2023-08-05-16-12-28-gif.19576/)
+![example of how the plugin works](https://github.com/FluffyNo/AntiBHOP/assets/104079426/8b4d6458-dbb5-4f5b-9359-638102fbb036)
