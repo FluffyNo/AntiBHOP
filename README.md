@@ -1,7 +1,7 @@
 # Anti-Bunnyhop 
 
 [![PaperMC](https://img.shields.io/badge/PaperMC-1.16.5-gray?labelColor=green&style=flat&link=https://papermc.io/)](https://papermc.io/)
-![Java](https://img.shields.io/badge/Java-ver.%2011-gray?labelColor=blue&style=flat)
+[![Java](https://img.shields.io/badge/Java-ver.%2011-gray?labelColor=blue&style=flat&link=https://jdk.java.net/java-se-ri/11-MR2)](https://jdk.java.net/java-se-ri/11-MR2)
 ___
 Данный плагин задуман исключительно для серверов с тематикой RolePlay.
 
