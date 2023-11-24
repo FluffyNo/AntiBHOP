@@ -8,7 +8,13 @@ import org.harakiry.Event.PluginListener;
 
 
 public final class AntiBHOP extends JavaPlugin {
-
+    private static AntiBHOP instance;
+    public AntiBHOP(){
+        instance = this;
+    }
+    public static AntiBHOP getInstance(){
+        return instance;
+    }
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new PluginListener(), this);

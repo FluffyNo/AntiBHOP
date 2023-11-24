@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.harakiry.AntiBHOP;
 import org.harakiry.Config;
+import org.harakiry.Utils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -22,7 +23,8 @@ public class AbhCommand implements CommandExecutor {
         AntiBHOP plugin = AntiBHOP.getPlugin(AntiBHOP.class);
         Config conf = new Config();
         Player p = (Player) sender;
-        String noperms = ChatColor.translateAlternateColorCodes('&', Config.getConfig().getString("Permission"));
+        // String noperms = ChatColor.translateAlternateColorCodes('&', Config.getConfig().getString("Permission"));
+        String noperms = Utils.color(Utils.getString("Permission"));
         Location playerLocation = p.getLocation();
         if (args.length == 0) {
             String usage = ChatColor.translateAlternateColorCodes('&', Config.getConfig().getString("Usage"));
@@ -34,7 +36,7 @@ public class AbhCommand implements CommandExecutor {
         switch (args[0].toLowerCase()) {
             case "reload": {
                 if (args[0].equalsIgnoreCase("reload") && p.hasPermission("abh.reload")) {
-                    String reload = ChatColor.translateAlternateColorCodes('&', Config.getConfig().getString("Reload"));
+                    String reload = Utils.color(Utils.getString("Reload"));
                     conf.reloadConfig(plugin);
                     p.playSound(playerLocation, ENTITY_EXPERIENCE_ORB_PICKUP, 2, 1);
                     p.sendMessage(reload);
@@ -56,15 +58,15 @@ public class AbhCommand implements CommandExecutor {
             case "disable": {
                 if (args[0].equalsIgnoreCase("disable") && p.hasPermission("abh.disable")) {
                 if (status == true) {
-                    String disable = ChatColor.translateAlternateColorCodes('&', Config.getConfig().getString("Disable title"));
-                    String disablesub = ChatColor.translateAlternateColorCodes('&', Config.getConfig().getString("Disable subtitle"));
+                    String disable = Utils.color(Utils.getString("Disable title"));
+                    String disablesub = Utils.color(Utils.getString("Disable subtitle"));
                     p.sendTitle(disable, disablesub, 2, 20, 10);
                     status = false;
                 }
                 else {
                     if (status == false) {
-                        String errorOff = ChatColor.translateAlternateColorCodes('&', Config.getConfig().getString("Error disable title"));
-                        String errorOffsub = ChatColor.translateAlternateColorCodes('&', Config.getConfig().getString("Error disable subtitle"));
+                        String errorOff = Utils.color(Utils.getString("Error disable title"));
+                        String errorOffsub = Utils.color(Utils.getString("Error disable subtitle"));
                         p.sendTitle(errorOff, errorOffsub, 2, 20, 10);
                     }
                 }

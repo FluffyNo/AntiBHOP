@@ -9,6 +9,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.harakiry.Commands.AbhCommand;
 import org.harakiry.Config;
+import org.harakiry.Utils;
 
 public class PluginListener implements Listener {
     @EventHandler
@@ -21,9 +22,9 @@ public class PluginListener implements Listener {
             return;
         }
         if (e.getFrom().getY() < e.getTo().getY() && p.isSprinting()) {
-                String msgbar = ChatColor.translateAlternateColorCodes('&', Config.getConfig().getString("Action-bar"));
-                String msgtitle = ChatColor.translateAlternateColorCodes('&', Config.getConfig().getString("Title"));
-                String msgsubtitle = ChatColor.translateAlternateColorCodes('&', Config.getConfig().getString("Subtitle"));
+                String msgbar = Utils.color(Utils.getString("Action-bar"));
+                String msgtitle = Utils.color(Utils.getString("Title"));
+                String msgsubtitle = Utils.color(Utils.getString("Subtitle"));
                 String AbhEffect = Config.getConfig().getString("Effect");
 
                 if(AbhEffect.equals("true")){
